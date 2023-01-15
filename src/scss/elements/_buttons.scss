@@ -1,4 +1,4 @@
-.button {
+button {
     padding: .4rem .6rem;
     font-size: 1.4rem;
     text-align: center;
@@ -9,6 +9,7 @@
     font-weight: $font-weight-thin;
     cursor: pointer;
     border-radius: 1rem;
+    margin: 0 .5rem;
 
     @media (min-width: $sm) {
         padding: 1rem 2rem;
