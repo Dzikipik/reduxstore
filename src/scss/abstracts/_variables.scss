@@ -11,6 +11,10 @@ $font-weight-thin: 100;
 $font-weight-standard: 300;
 $font-weight-bold: 700;
 
+body {
+  background-color: $color-main;
+}
+
 h3 {
   font-family: $font-big;
   font-size: 2.4rem;
