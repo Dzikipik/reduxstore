@@ -8,12 +8,12 @@ const initialState = [
     content: "I've heard good things.",
     date: sub(new Date(), { minutes: 10 }).toISOString(),
     reactions: {
-      thumbsUp: 0,
+      kitty: 0,
       wow: 0,
       heart: 0,
-      rocket: 0,
-      coffee: 0
-  },
+      lazy: 0,
+      cosmos: 0,
+    },
   },
   {
     id: "2",
@@ -21,12 +21,12 @@ const initialState = [
     content: "The more I say slice, the more I want pizza.",
     date: sub(new Date(), { minutes: 5 }).toISOString(),
     reactions: {
-      thumbsUp: 0,
+      kitty: 0,
       wow: 0,
       heart: 0,
-      rocket: 0,
-      coffee: 0
-  },
+      lazy: 0,
+      cosmos: 0,
+    },
   },
 ];
 
@@ -46,15 +46,22 @@ const postSlice = createSlice({
             content,
             date: new Date().toISOString(),
             userId,
+            reactions: {
+              kitty: 0,
+              wow: 0,
+              heart: 0,
+              lazy: 0,
+              cosmos: 0,
+            },
           },
         };
       },
-      reactionAdded(state, action){
-        const {postId, reaction} = action.payload;
-        const exxistingPost = state.find(post => post.id === postId);
-        if (exxistingPost){
-          exxistingPost.reaction[reaction]++;
-        }
+    },
+    reactionAdded(state, action) {
+      const { postId, reaction } = action.payload;
+      const existingPost = state.find((post) => post.id === postId);
+      if (existingPost) {
+        existingPost.reactions[reaction]++;
       }
     },
   },
